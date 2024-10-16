@@ -147,3 +147,5 @@ dist
 # Course material
 theory/
 Slides/
+*.zip
+.vscode/

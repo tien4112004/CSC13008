@@ -24,3 +24,7 @@ Chosen template: **Target**
 ## Screenshots
 
 Included in [`/Screenshots`](./Screenshots/) folder (Tested on Firefox, Safari, Microsoft Edge(Chromium)).
+
+## Notes
+
+- `tailwind.config.js`, `package.json` is created for Tailwind's Intellisense. This file does not related to anything in this assignment.
