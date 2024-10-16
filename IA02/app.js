@@ -3,17 +3,23 @@ document.getElementById("calculate").addEventListener("click", function () {
   const num2 = document.getElementById("num2").value;
   const operation = document.querySelector(
     'input[name="operation"]:checked'
-  ).value;
+  )?.value;
   const resultField = document.getElementById("result");
   const messageField = document.getElementById("message");
   let result = 0;
 
   messageField.textContent = "";
 
+  if (operation == undefined) {
+    messageField.textContent = "Vui lòng chọn phép toán";
+    return;
+  }
+
   if (isNaN(num1) || num1.trim() === "") {
     messageField.textContent = "Giá trị nhập ở ô Số thứ nhất không phải là số";
     return;
   }
+
   if (isNaN(num2) || num2.trim() === "") {
     messageField.textContent = "Giá trị nhập ở ô Số thứ hai không phải là số";
     return;
@@ -48,6 +54,22 @@ document.getElementById("num1").addEventListener("input", function () {
   document.getElementById("message").textContent = "";
 });
 
+document.getElementById("num1").addEventListener("blur", function () {
+  const num1 = document.getElementById("num1").value;
+  if (isNaN(num1) || num1.trim() === "") {
+    document.getElementById("message").textContent =
+      "Giá trị nhập ở ô Số thứ nhất không phải là số";
+  }
+});
+
 document.getElementById("num2").addEventListener("input", function () {
   document.getElementById("message").textContent = "";
+});
+
+document.getElementById("num2").addEventListener("blur", function () {
+  const num2 = document.getElementById("num2").value;
+  if (isNaN(num2) || num2.trim() === "") {
+    document.getElementById("message").textContent =
+      "Giá trị nhập ở ô Số thứ hai không phải là số";
+  }
 });
